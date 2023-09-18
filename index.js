@@ -10,7 +10,11 @@ app.get("/", function (req, res) {
   res.send("hi");
 });
 
-app.get("/add", userController.add);
+app.post("/user", userController.createUser);
+app.get("/users", userController.getUsers);
+app.get("/user/:id", userController.getUserId);
+app.patch("/user/:id", userController.updateUser);
+app.delete("/user/:id", userController.deleteUser);
 const PORT = 3000;
 // User.sync();
 app.listen(PORT, () => {
